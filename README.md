@@ -21,7 +21,9 @@ zur Fachinformatikerin Anwendungsentwicklung.
 ## Installation und Start
 
 **Einfachste Methode (Windows):**
-Doppelklick auf die Datei `start.bat` im Projektordner - das Programm startet automatisch.
+1. Repository herunterladen: Auf GitHub oben auf den grünen Button "Code" klicken, dann "Download ZIP" auswählen
+2. ZIP-Datei entpacken (Rechtsklick → "Alle extrahieren")
+3. Im entpackten Ordner doppelklick auf die Datei `start.bat` - das Programm startet automatischDoppelklick auf die Datei `start.bat` im Projektordner - das Programm startet automatisch.
 
 **Alternative (über die Kommandozeile):**
 1. Python 3 muss installiert sein
