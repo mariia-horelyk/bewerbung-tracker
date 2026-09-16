@@ -20,18 +20,19 @@ zur Fachinformatikerin Anwendungsentwicklung.
 
 ## Installation und Start
 
-**Einfachste Methode (Windows):**
-1. Repository herunterladen: Auf GitHub oben auf den grünen Button "Code" klicken, dann "Download ZIP" auswählen
-2. ZIP-Datei entpacken (Rechtsklick → "Alle extrahieren")
-3. Im entpackten Ordner doppelklick auf die Datei `start.bat` - das Programm startet automatischDoppelklick auf die Datei `start.bat` im Projektordner - das Programm startet automatisch.
-
-**Alternative (über die Kommandozeile):**
+**Über die Kommandozeile (empfohlen, funktioniert immer):**
 1. Python 3 muss installiert sein
 2. Repository herunterladen oder klonen
 3. Im Terminal in den Projektordner wechseln
 4. Programm starten mit:
 
 python tracker.py
+
+
+**Alternative: start.bat (Doppelklick-Start)**
+Im Projektordner liegt die Datei `start.bat` für einen schnellen Start per Doppelklick.
+Hinweis: Windows kann bei heruntergeladenen .bat-Dateien eine Sicherheitswarnung anzeigen 
+(SmartScreen oder Smart App Control). In diesem Fall bitte die Kommandozeilen-Methode oben verwenden.
 
 
 ## Beispiel
