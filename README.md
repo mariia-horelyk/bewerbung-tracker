@@ -20,6 +20,10 @@ zur Fachinformatikerin Anwendungsentwicklung.
 
 ## Installation und Start
 
+**Einfachste Methode (Windows):**
+Doppelklick auf die Datei `start.bat` im Projektordner - das Programm startet automatisch.
+
+**Alternative (über die Kommandozeile):**
 1. Python 3 muss installiert sein
 2. Repository herunterladen oder klonen
 3. Im Terminal in den Projektordner wechseln
