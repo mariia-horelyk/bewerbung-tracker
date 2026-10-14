@@ -1,4 +1,5 @@
 import json # Modul zum Speichern der Daten in einer Datei
+from datetime import datetime  # Modul für Datumsberechnungen
 
 # Versuche, beim Programmstart vorhandene Bewerbungen aus der Datei zu laden.
 # Falls die Datei noch nicht existiert (erster Start), wird eine leere Liste erstellt.
@@ -22,7 +23,9 @@ while True:
     print("2 - Alle Bewerbungen anzeigen")
     print("3 - Status einer Bewerbung ändern")
     print("4 - Bewerbung löschen")
-    print("5 - Beenden")
+    print("5 - Statistik anzeigen ")
+    print("6 - Erinnerungen") 
+    print("7 - Beenden")
 
     auswahl = input("Was möchtest du tun? ")
 
@@ -44,7 +47,9 @@ while True:
 
 # Punkt 2: alle Bewerbungen anzeigen
     elif auswahl == "2":
-        for b in bewerbungen:   
+        print("Insgesamt:", len(bewerbungen), "Bewerbungen")  
+        for i, b in enumerate(bewerbungen): 
+            print("Bewerbung Nr. ", i+1)
             print("Firma:", b['firma'])
             print("Datum:", b['datum'])
             print("Stelle:", b['stelle'])
@@ -70,11 +75,38 @@ while True:
 
         bewerbungen.pop(int(nummer)-1)
         speichern() # Änderung sofort in der Datei sichern
-
-# Punkt 5: Programm beenden
+        
+ # Punkt 5: Statistik anzeigen       
     elif auswahl == "5":
-            print("Bis bald!")
-            break
+        gesamt = len(bewerbungen)
+        absagen = 0 
+        for b in bewerbungen:
+            if b["status"] == "Absage":
+                absagen = absagen + 1
+        print("Insgesamt:", gesamt, "Bewerbungen")
+        print("Absagen:", absagen)
+        if gesamt > 0:
+            quote = (absagen / gesamt) * 100
+            print("Absagequote:", round(quote, 1), "%")
+            
+  # Punkt 6: Erinnerungen
+    elif auswahl == "6":
+            heute = datetime.now()
+            print("Erinnerung fällig:")
+            for b in bewerbungen:
+                if b["status"] == "gesendet":
+                    try:
+                        datum=datetime.strptime(b["datum"], "%d.%m.%Y")
+                    except ValueError:
+                        continue
+                    tage = (heute - datum).days
+                    if tage >= 14:
+                        print("Firma:", b["firma"], "| gesendet am", b["datum"], "| vor", tage, "Tagen")
+        
+# Punkt 7: Programm beenden
+    elif auswahl == "7":
+        print("Bis bald!")
+        break
 
  
     
