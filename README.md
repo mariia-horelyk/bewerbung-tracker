@@ -7,16 +7,19 @@ zur Fachinformatikerin Anwendungsentwicklung.
 ## Funktionen
 
 - Neue Bewerbung hinzufügen (Firma, Datum, Stelle)
-- Alle gespeicherten Bewerbungen anzeigen
+- Alle Bewerbungen anzeigen (nummeriert, mit Gesamtzahl)
 - Status einer Bewerbung ändern (z. B. "gesendet" → "Vorstellungsgespräch")
 - Bewerbung löschen
-- Daten werden automatisch in einer JSON-Datei gespeichert und bleiben 
+- Statistik: Anzahl aller Bewerbungen, Absagen und Absagequote in Prozent
+- Erinnerungen: Bewerbungen ohne Antwort nach 14 Tagen werden angezeigt
+- Daten werden automatisch in einer JSON-Datei gespeichert und bleiben
   auch nach dem Beenden des Programms erhalten
 
 ## Verwendete Technologien
 
 - Python 3
 - Eingebautes `json`-Modul zur Datenspeicherung
+- Eingebautes `datetime`-Modul für die Datumsberechnung (Erinnerungen)
 
 ## Installation und Start
 
@@ -41,7 +44,9 @@ Hinweis: Windows kann bei heruntergeladenen .bat-Dateien eine Sicherheitswarnung
 2 - Alle Bewerbungen anzeigen
 3 - Status einer Bewerbung ändern
 4 - Bewerbung löschen
-5 - Beenden
+5 - Statistik anzeigen
+6 - Erinnerungen
+7 - Beenden
 Was möchtest du tun?
 
 
