@@ -12,6 +12,8 @@ zur Fachinformatikerin Anwendungsentwicklung.
 - Bewerbung löschen
 - Statistik: Anzahl aller Bewerbungen, Absagen und Absagequote in Prozent
 - Erinnerungen: Bewerbungen ohne Antwort nach 14 Tagen werden angezeigt
+- LinkedIn-Kontakte: pro Firma anzeigen, ob ein Kontakt gefunden wurde
+  ("Kontakt gefunden", "Kein Kontakt gefunden", "noch nicht gesucht") und den Status ändern
 - Daten werden automatisch in einer JSON-Datei gespeichert und bleiben
   auch nach dem Beenden des Programms erhalten
 
@@ -40,13 +42,15 @@ Hinweis: Windows kann bei heruntergeladenen .bat-Dateien eine Sicherheitswarnung
 
 ## Beispiel
 
-1 - Bewerbung hinzufügen
+11 - Bewerbung hinzufügen
 2 - Alle Bewerbungen anzeigen
 3 - Status einer Bewerbung ändern
 4 - Bewerbung löschen
 5 - Statistik anzeigen
 6 - Erinnerungen
-7 - Beenden
+7 - LinkedIn-Kontakte
+8 - LinkedIn-Kontakt ändern
+9 - Beenden
 Was möchtest du tun?
 
 
