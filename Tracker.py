@@ -24,8 +24,10 @@ while True:
     print("3 - Status einer Bewerbung ändern")
     print("4 - Bewerbung löschen")
     print("5 - Statistik anzeigen ")
-    print("6 - Erinnerungen") 
-    print("7 - Beenden")
+    print("6 - Erinnerungen")
+    print("7 - LinkedIn-Kontakte")
+    print("8 - LinkedIn-Kontakt ändern") 
+    print("9 - Beenden")
 
     auswahl = input("Was möchtest du tun? ")
 
@@ -39,7 +41,8 @@ while True:
             "firma": firma,
             "datum": datum,
             "stelle": stelle,
-            "status": "gesendet"
+            "status": "gesendet",
+            "linkedin": "noch nicht gesucht"
         }
 
         bewerbungen.append(new_bewerbung)
@@ -76,7 +79,7 @@ while True:
         bewerbungen.pop(int(nummer)-1)
         speichern() # Änderung sofort in der Datei sichern
         
- # Punkt 5: Statistik anzeigen       
+# Punkt 5: Statistik anzeigen       
     elif auswahl == "5":
         gesamt = len(bewerbungen)
         absagen = 0 
@@ -89,7 +92,7 @@ while True:
             quote = (absagen / gesamt) * 100
             print("Absagequote:", round(quote, 1), "%")
             
-  # Punkt 6: Erinnerungen
+# Punkt 6: Erinnerungen
     elif auswahl == "6":
             heute = datetime.now()
             print("Erinnerung fällig:")
@@ -102,9 +105,35 @@ while True:
                     tage = (heute - datum).days
                     if tage >= 14:
                         print("Firma:", b["firma"], "| gesendet am", b["datum"], "| vor", tage, "Tagen")
-        
-# Punkt 7: Programm beenden
+                        
+# Punkt 7: LinkedIn-Kontakte pro Firma anzeigen
     elif auswahl == "7":
+        for i, b in enumerate(bewerbungen):
+            print(i+1, "-", b["firma"], "|", b.get("linkedin", "noch nicht gesucht"))                     
+                        
+# Punkt 8: LinkedIn-Kontakt einer Firma ändern
+    elif auswahl == "8":
+        for i, b in enumerate(bewerbungen):
+            print(i+1, "-", b["firma"], "|", b.get("linkedin", "noch nicht gesucht"))
+
+        nummer = input("Welche Nummer möchtest du ändern? ")
+        print("1 - Kontakt gefunden")
+        print("2 - Kein Kontakt gefunden")
+        print("3 - noch nicht gesucht")
+        wahl = input("Neuer Status: ")
+
+        if wahl == "1":
+            neuer_status = "Kontakt gefunden"
+        elif wahl == "2":
+            neuer_status = "Kein Kontakt gefunden"
+        elif wahl == "3":
+            neuer_status = "noch nicht gesucht"
+
+        bewerbungen[int(nummer)-1]["linkedin"] = neuer_status
+        speichern()
+                                
+# Punkt 9: Programm beenden
+    elif auswahl == "9":
         print("Bis bald!")
         break
 
