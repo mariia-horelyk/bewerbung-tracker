@@ -22,6 +22,8 @@ zur Fachinformatikerin Anwendungsentwicklung.
 - Python 3
 - Eingebautes `json`-Modul zur Datenspeicherung
 - Eingebautes `datetime`-Modul für die Datumsberechnung (Erinnerungen)
+- Funktionen, Listen und Dictionaries zur Verwaltung der Bewerbungen
+- Menüsteuerung in der Kommandozeile
 
 ## Installation und Start
 
